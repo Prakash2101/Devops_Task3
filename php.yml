@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-app
+  labels:
+    name: php-app
+    env: php-testing
+spec:
+  replicas: 1
+  selector:
+    matchExpressions:
+    - { key: name, operator: In , values: [ php-pod ] }
+  template:
+    metadata:
+      name: php-pod
+      labels:
+        name: php-pod
+    spec:
+      containers:
+      - name: php-container
+        image: vimal13/apache-webserver-php
+        volumeMounts:
+        - name: phplogs
+          mountPath: /var/log/httpd/
+        - name: phpstorage
+          mountPath: /var/www/php/
