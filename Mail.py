@@ -5,9 +5,9 @@ from email.mime.base import MIMEBase
 from email import encoders
 import os.path
 
-email = 'taskmessage.21@gmail.com'
-password = 'prakash.s@123'
-send_to_email = 'rajpurohitprakash04@gmail.com'
+email = 'sender mail id'
+password = 'password'
+send_to_email = 'receiver/developer mail id'
 subject = '!!! Testing Server Report !!!'
 message = "Web App Server-1 is not running, debug the code and please find the log file in attachment."
 file_location = "/root/dev_task3/html_log/log.txt"
